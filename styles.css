@@ -1,21 +1,14 @@
-#rss-feed-container {
-    width: 80%;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f9f9f9;
+.container {
+    display: flex;
 }
 
-.rss-item {
-    margin-bottom: 20px;
+.column {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
 }
 
-.rss-item h3 {
+.box {
+    padding: 10px;
     margin: 0;
-    font-size: 1.2em;
-}
-
-.rss-item p {
-    margin: 5px 0;
 }
