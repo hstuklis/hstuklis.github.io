@@ -1,13 +1,24 @@
 .container {
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .column {
+    background-color: lightslategray;
     display: flex;
-    flex: 1;
     flex-direction: column;
+    flex: 1 1 412px;
+    min-width: 412px;
+    padding: 10px;
+    margin: 10px;
+    box-sizing: border-box;
 }
 
 .box {
-    margin: 0;
+    background-color: lightblue;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 10px;
+    box-sizing: border-box;
 }

@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     fetchRSSFeed('https://news.ycombinator.com/rss')
-    fetchRSSFeed('')
+    fetchRSSFeed('https://lobste.rs/rss')
 });
 
 function fetchRSSFeed(url) {
