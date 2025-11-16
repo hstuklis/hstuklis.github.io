@@ -1,0 +1,16 @@
+---
+import '../styles/global.css'
+import WeddingRSVPForm from "../components/wedding-rsvp-form"
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+	</head>
+	<body class="bg-pink-50 min-h-screen flex items-center justify-center p-4">
+		<WeddingRSVPForm client:load/>
+	</body>
+</html>
