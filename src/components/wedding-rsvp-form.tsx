@@ -1,15 +1,15 @@
-import {useState, type FormEvent, type ChangeEvent} from "react";
+import {useState, type FormEvent, type ChangeEvent} from "react"
 
-const MIN_GUESTS = 1;
-const MAX_GUESTS = 9;
+const MIN_GUESTS = 1
+const MAX_GUESTS = 9
 
 interface FormDataState {
-    name: string;
-    phone: string;
-    email: string;
-    isAttending: 'yes' | 'no' | 'maybe';
-    guests: number;
-    dietary: string;
+    name: string
+    phone: string
+    email: string
+    isAttending: 'yes' | 'no' | 'maybe'
+    guests: number
+    dietary: string
 }
 
 function WeddingRSVPForm() {
@@ -22,30 +22,30 @@ function WeddingRSVPForm() {
         dietary: '',
     })
 
-    const [isSubmitting, setIsSubmitting] = useState(false);
-    const [isSubmitted, setIsSubmitted] = useState(false);
-    const [error, setError] = useState<string | null>(null);
+    const [isSubmitting, setIsSubmitting] = useState(false)
+    const [isSubmitted, setIsSubmitted] = useState(false)
+    const [error, setError] = useState<string | null>(null)
 
     const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-        const { name, value } = e.target;
+        const { name, value } = e.target
         setFormData(prevData => ({
             ...prevData,
             [name]: value === 'guests' ? parseInt(value, 10) : value
         }))
-    };
+    }
 
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
+        e.preventDefault()
 
         // Web3Forms Access Key check here.
 
-        setIsSubmitting(true);
-        setError(null);
+        setIsSubmitting(true)
+        setError(null)
 
         // Try-Catch submit payload to Web3Forms here.
         setIsSubmitted(true)
 
-        setIsSubmitting(false);
+        setIsSubmitting(false)
     }
 
     if (isSubmitted) {
@@ -201,4 +201,4 @@ function WeddingRSVPForm() {
     )
 }
 
-export default WeddingRSVPForm;
+export default WeddingRSVPForm
