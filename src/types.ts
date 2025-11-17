@@ -1,3 +1,9 @@
+export type NavLink = {
+  name: string
+  url: string
+  external?: boolean
+}
+
 export interface Config {
     site: string
     font: string
@@ -6,7 +12,6 @@ export interface Config {
     author: string
     tags: string[]
     pageSize: number
-    nav: string[]
+    headerLinks: NavLink[]
     footerLinks: string[]
-    rss: boolean
 }

@@ -1,19 +1,64 @@
 ---
 import '../styles/global.css'
+import Config from '~/config'
 interface Props {
-    title: string
+    title?: string
+    description?: string
+    tags?: string[]
+    author?: string
 }
-const { title } = Astro.props
+
+const { title, description, tags, author } = Astro.props
+const pageUrl = new URL(Astro.url.pathname, Astro.site).href.replace(/\/$/, '') // Remove trailing slash for consistency
+const pageType = Astro.url.pathname.startsWith('/posts') ? 'post' : 'website'
+const pageTitle = title ? `${title} | ${Config.title}` : Config.title
+const pageDescription = description || Config.description
+const pageAuthor = author || Config.author
+const pageImage =
+  pageType === 'post'
+    ? Astro.url.origin +
+      Astro.url.pathname.replace(/\/posts\//, '/social-cards/') +
+      '.png'
+    : `${Astro.url.origin}/social-cards/__default.png`
+const pageKeywords = [
+  ...new Set(Config.tags.concat(tags || []).map((word) => word.toLowerCase())),
+].join(', ')
 ---
 
+<!doctype html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="generator" content={Astro.generator} />
+        <meta name="title" content={pageTitle} />
+        <meta name="description" content={pageDescription} />
+        <meta name="author" content={pageAuthor} />
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={pageDescription} />
+        <meta property="og:url" content={pageUrl} />
+        <meta property="og:type" content={pageType} />
+        {pageImage && <meta property="og:image" content={pageImage} />}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={pageDescription} />
+        {pageImage && <meta name="twitter:image" content={pageImage} />}
+        <meta name="keywords" content={pageKeywords} />
+        <link rel="canonical" href={pageUrl} />
+        <link rel="sitemap" href="/sitemap-index.xml" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link
+        rel="alternate"
+        type="application/rss+xml"
+        title={Config.title}
+        href={new URL('rss.xml', Astro.site)}
+        />
+        <title>{pageTitle}</title>
+        <!-- <style is:global define:vars={baseCssVars}></style> -->
+        <!-- <style is:inline set:html={generatedCss}></style> -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.css">
         <!-- <Header title={title}/> -->
-         <title>{title}</title>
     </head>
     <body>
         <nav>
@@ -26,9 +71,4 @@ const { title } = Astro.props
         </article>
         <!-- <Footer /> -->
     </body>
-    <style>
-        h1 {
-            font-size: 2rem;
-        }
-    </style>
 </html>
