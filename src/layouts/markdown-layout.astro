@@ -4,14 +4,14 @@ import type { MarkdownLayoutProps } from 'astro'
 
 type Props = MarkdownLayoutProps<{
     title: string
-    description: string
+    description?: string
 }>
 
 const { frontmatter } = Astro.props
 ---
 
 <Layout 
-    title={frontmatter.title} 
+    title=`hello`
     description={frontmatter.description}>
     <slot/>
 </Layout>

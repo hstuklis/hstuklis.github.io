@@ -28,8 +28,7 @@ const pageKeywords = [
 <!doctype html>
 <html lang="en">
     <head>
-        <meta charset="utf-8">
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="generator" content={Astro.generator} />
         <meta name="title" content={pageTitle} />
@@ -49,22 +48,22 @@ const pageKeywords = [
         <link rel="sitemap" href="/sitemap-index.xml" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link
-        rel="alternate"
-        type="application/rss+xml"
-        title={Config.title}
-        href={new URL('rss.xml', Astro.site)}
+            rel="alternate"
+            type="application/rss+xml"
+            title={Config.title}
+            href={new URL('rss.xml', Astro.site)}
         />
         <title>{pageTitle}</title>
         <!-- <style is:global define:vars={baseCssVars}></style> -->
         <!-- <style is:inline set:html={generatedCss}></style> -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.css">
-        <!-- <Header title={title}/> -->
     </head>
     <body>
         <nav>
             <a href="/">Home</a>
             <a href="/wedding">Wedding</a>
         </nav>
+        <!-- <Header title={title}/> -->
         <h1>{title}</h1>
         <article>
             <slot /> <!-- your content is injected here -->
