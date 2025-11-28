@@ -9,7 +9,7 @@ interface Props {
 }
 
 const { title, description, tags, author } = Astro.props
-const pageUrl = new URL(Astro.url.pathname, Astro.site).href.replace(/\/$/, '') // Remove trailing slash for consistency
+const pageUrl = new URL(Astro.url.pathname, Astro.site).href.replace(/\/$/, '') 
 const pageType = Astro.url.pathname.startsWith('/posts') ? 'post' : 'website'
 const pageTitle = title ? `${title} | ${Config.title}` : Config.title
 const pageDescription = description || Config.description
@@ -58,16 +58,22 @@ const pageKeywords = [
         <!-- <style is:inline set:html={generatedCss}></style> -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.css">
     </head>
-    <body>
-        <nav>
-            <a href="/">Home</a>
-            <a href="/wedding">Wedding</a>
-        </nav>
+    <body class="text-sl-fg-1 bg-sl-bg-0 max-w-9/10 mx-auto">
+        <div class="flex flex-col mt-5">
+            <nav class="flex justify-between items-center">
+                <h2 class="text-sl-cyan text-4xl font-pacifico"><a href="/">Henry Stuklis<a/></h2>
+                <ul class="flex flex-row">
+                    <li class="mr-2 underline hover:bg-sl-bg-1"><a href="/about">About</a></li>
+                    <li class="mr-2 underline hover:bg-sl-bg-1"><a href="/posts">Posts</a></li>
+                    <li class="mr-2">\\\</li>
+                    <li><a class="underline hover:bg-sl-bg-1" href="/wedding">Wedding</a></li>
+                </ul>
+            </nav>
+        <div/>
         <!-- <Header title={title}/> -->
-        <h1>{title}</h1>
-        <article>
+        <main>
             <slot /> <!-- your content is injected here -->
-        </article>
+        </main>
         <!-- <Footer /> -->
     </body>
 </html>

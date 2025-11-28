@@ -5,13 +5,13 @@ export type NavLink = {
 }
 
 export interface Config {
-    site: string
-    font: string
-    title: string
-    description: string
-    author: string
-    tags: string[]
-    pageSize: number
-    headerLinks: NavLink[]
-    footerLinks: string[]
+  site: string
+  font: string
+  title: string
+  description: string
+  author: string
+  tags: string[]
+  pageSize: number
+  headerLinks: NavLink[]
+  footerLinks: string[]
 }

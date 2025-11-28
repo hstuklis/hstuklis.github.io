@@ -1,1 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
 @import "tailwindcss";
+@theme {
+    --font-ibm: 'IBM Plex Mono', monospace;
+    --font-jetbrains: 'JetBrains Mono', monospace;
+    --font-pacifico: 'Pacifico', cursive;
+
+    --color-sl-bg-0: #103c48;
+    --color-sl-bg-1: #184956;
+    --color-sl-bg-2: #2d5b69;
+    --color-sl-dim: #72898f;
+    --color-sl-fg-0: #adbcbc;
+    --color-sl-fg-1: #cad8d9;
+    
+    --color-sl-red: #fa5750;
+    --color-sl-green: #75b938;
+    --color-sl-yellow: #dbb32d;
+    --color-sl-blue: #4695f7;
+    --color-sl-magenta: #f275be;
+    --color-sl-cyan: #41c7b9;
+    --color-sl-orange: #ed8649;
+    --color-sl-violet: #af88eb;
+
+    --color-sl-br-red: #ff665c;
+    --color-sl-br-green: #84c747;
+    --color-sl-br-yellow: #ebc13d;
+    --color-sl-br-blue: #58a3ff;
+    --color-sl-br-magenta: #ff84cd;
+    --color-sl-br-cyan: #53d6c7;
+    --color-sl-br-orange: #fd9456;
+    --color-sl-br-violet: #bd96fa;
+}
