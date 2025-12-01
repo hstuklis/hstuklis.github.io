@@ -32,4 +32,79 @@
     --color-sl-br-cyan: #53d6c7;
     --color-sl-br-orange: #fd9456;
     --color-sl-br-violet: #bd96fa;
+
+    --color-slb-bg-0: #181818;
+    --color-slb-bg-1: #252525;
+    --color-slb-bg-2: #3b3b3b;
+    --color-slb-dim: #777777;
+    --color-slb-fg-0: #b9b9b9;
+    --color-slb-fg-1: #dedede;
+   
+    --color-slb-red: #ed4a46;
+    --color-slb-green: #70b433;
+    --color-slb-yellow: #dbb32d;
+    --color-slb-blue: #368aeb;
+    --color-slb-magenta: #eb6eb7;
+    --color-slb-cyan: #3fc5b7;
+    --color-slb-orange: #e67f43;
+    --color-slb-violet: #a580e2;
+
+    --color-slb-br-red: #ff5e56;
+    --color-slb-br-green: #83c746;
+    --color-slb-br-yellow: #efc541;
+    --color-slb-br-blue: #4f9cfe;
+    --color-slb-br-magenta: #ff81ca;
+    --color-slb-br-cyan: #56d8c9;
+    --color-slb-br-orange: #fa9153;
+    --color-slb-br-violet: #b891f5;
+
+    --color-slbr-bg-0: #fbf3db;
+    --color-slbr-bg-1: #ece3cc;
+    --color-slbr-bg-2: #d5cdb6;
+    --color-slbr-dim: #909995;
+    --color-slbr-fg-0: #53676d;
+    --color-slbr-fg-1: #3a4d53;
+   
+    --color-slbr-red: #d2212d;
+    --color-slbr-green: #489100;
+    --color-slbr-yellow: #ad8900;
+    --color-slbr-blue: #0072d4;
+    --color-slbr-magenta: #ca4898;
+    --color-slbr-cyan: #009c8f;
+    --color-slbr-orange: #c25d1e;
+    --color-slbr-violet: #8762c6;
+
+    --color-slbr-br-red: #cc1729;
+    --color-slbr-br-green: #428b00;
+    --color-slbr-br-yellow: #a78300;
+    --color-slbr-br-blue: #006dce;
+    --color-slbr-br-magenta: #c44392;
+    --color-slbr-br-cyan: #00978a;
+    --color-slbr-br-orange: #bc5819;
+    --color-slbr-br-violet: #825dc0;
+
+    --color-slw-bg-0: #ffffff;
+    --color-slw-bg-1: #ebebeb;
+    --color-slw-bg-2: #cdcdcd;
+    --color-slw-dim: #878787;
+    --color-slw-fg-0: #474747;
+    --color-slw-fg-1: #282828;
+   
+    --color-slw-red: #d6000c;
+    --color-slw-green: #1d9700;
+    --color-slw-yellow: #c49700;
+    --color-slw-blue: #0064e4;
+    --color-slw-magenta: #dd0f9d;
+    --color-slw-cyan: #00ad9c;
+    --color-slw-orange: #d04a00;
+    --color-slw-violet: #7f51d6;
+
+    --color-slw-br-red: #bf0000;
+    --color-slw-br-green: #008400;
+    --color-slw-br-yellow: #af8500;
+    --color-slw-br-blue: #0054cf;
+    --color-slw-br-magenta: #c7008b;
+    --color-slw-br-cyan: #009a8a;
+    --color-slw-br-orange: #ba3700;
+    --color-slw-br-violet: #6b40c3;
 }
