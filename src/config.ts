@@ -4,7 +4,7 @@ const config: Config = {
   site: 'https://hstuklis.github.io',
   font: 'IBM Plex Mono',
   
-  title: 'Stuklink',
+  title: 'henstuk.dev',
   description: 'Henry\'s homepage to the world wide web',
   author: 'Henry Stuklis',
   tags: ['Henry Stuklis', 'hstuklis', 'Stuklink', 'homepage', 'blog'],
