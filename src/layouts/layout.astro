@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css'
+import RepeatedTextBG from "../components/repeated-text-bg.tsx"
 import Config from '~/config'
 interface Props {
     title?: string
@@ -56,19 +57,20 @@ const pageKeywords = [
         <title>{pageTitle}</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.css">
     </head>
-    <body class="mx-16 mb-8 mt-2 text-nb-fg-0 bg-nb-bg-0 font-public-sans">
-        <div class="px-12 flex flex-col bg-nb-bg-1 border-8 border-nb-fg-0 border-t-32">
+    <body class="max-w-screen-2xl mx-auto text-coffee-bean bg-alabaster-grey font-public-sans">
+        <RepeatedTextBG text="DEV" classes="whitespace-nowrap absolute inset-0 overflow-hidden select-none opacity-10 text-coffee-bean"></RepeatedTextBG>
+        <div class="relative z-10 px-8 flex flex-col bg-tea-green border border-coffee-bean border-b-6">
             <header>
-                <nav class="flex flex-row flex-wrap justify-between items-end font-archivo my-4">
-                    <h2 class="text-3xl"><a href="/" title="Home" class="hover:text-nb-blue">henstuk<a/>◈<a href="https://github.com/hstuklis" title="github.com/hstuklis" class="hover:text-nb-orange">dev<a/></h2>
-                    <ul class="flex flex-row text-lg">
-                        <li class="mr-2 hover:text-nb-blue"><a href="/about" title="About">About</a></li>
-                        <li class="mr-2 hover:text-nb-blue"><a href="/posts" title="Posts">Posts</a></li>
+                <nav class="flex flex-row flex-wrap justify-between items-end my-4 bg-mauve border border-b-4 px-2 py-1 font-bold">
+                    <h2 class="text-3xl pr-8 font-archivo"><a href="/" title="Home" class="hover:text-full-blue">henstuk<a/>◈<a href="https://github.com/hstuklis" title="github.com/hstuklis" class="hover:text-scarlet-fire">dev<a/></h2>
+                    <ul class="flex flex-row text-xl font-epilogue">
+                        <li class="mr-2 hover:text-full-blue"><a href="/about" title="About">About</a></li>
+                        <li class="mr-2">◇</li>
+                        <li class="mr-2 hover:text-full-blue"><a href="/posts" title="Posts">Posts</a></li>
                         <li class="mr-2">\\\</li>
-                        <li><a class="hover:text-nb-pink" href="/wedding" title="🌹My Wedding Website🌹">Wedding</a></li>
+                        <li><a class="hover:text-scarlet-fire" href="/wedding" title="🌹My Wedding Website🌹">Wedding</a></li>
                     </ul>
                 </nav>
-                <hr class="border-t-2">
             <header/>
             <main>
                 <slot />

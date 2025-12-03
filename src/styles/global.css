@@ -6,6 +6,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Fascinate+Inline');
 @import url('https://fonts.googleapis.com/css2?family=Limelight');
 @import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800');
+@import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900');
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800');
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800');
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap');
 
 @import "tailwindcss";
 @theme {
@@ -17,6 +23,12 @@
     --font-fascinate-inline: 'Fascinate Inline', system-ui;
     --font-limelight: 'Limelight', sans-serif;
     --font-public-sans: 'Public Sans', sans-serif;
+    --font-bricolage: 'Bricolage Grotesque', sans-serif;
+    --font-grotesque: 'Darker Grotesque', sans-serif;
+    --font-epilogue: 'Epilogue', sans-serif;
+    --font-jakarta: 'Plus Jakarta Sans', sans-serif;
+    --font-sora: 'Sora', sans-serif;
+    --font-syne: 'Syne', sans-serif;
 
     --color-sl-bg-0: #103c48;
     --color-sl-bg-1: #184956;
@@ -110,50 +122,16 @@
     --color-slw-br-orange: #ba3700;
     --color-slw-br-violet: #6b40c3;
 
-    --color-retro-dark-blue: #01204e;
-    --color-retro-blue: #028391;
-    --color-retro-yellow: #f6dcac;
-    --color-retro-light-orange: #faa968;
-    --color-retro-orange: #f85525;
-
-    --color-electric-blue: #2c75ff;
-    --color-electric-orange: #ff3503;
-
-    --color-nb-cyan: #7df9ff;
-    --color-nb-green: #2fff2f;
-    --color-nb-pink: #ff00f5;
-    --color-nb-blue: #3300ff;
-    --color-nb-yellow: #ffff00;
-    --color-nb-orange: #ff4911;
-
-    --color-nb-fg-0: #041f41;
-    --color-nb-fg-1: #0e3e77;
-    --color-nb-bg-0: #e5e5e5;
-    --color-nb-bg-1: #e9fdbb;
-    --color-nb-hl-0: #ffff95;
-    --color-nb-hl-1: #ff83ff;
-
-    --color-nbex-blue-0: #daf5f0;
-    --color-nbex-blue-1: #a7dbd8;
-    --color-nbex-blue-2: #87ceeb;
-    --color-nbex-blue-3: #69d2e7;
-    --color-nbex-green-0: #b5d2ad;
-    --color-nbex-green-1: #bafca2;
-    --color-nbex-green-2: #90ee90;
-    --color-nbex-yellow-0: #fdfd96;
-    --color-nbex-yellow-1: #ffdb58;
-    --color-nbex-yellow-2: #f4d738;
-    --color-nbex-yellow-3: #e3a018;
-    --color-nbex-red-0: #f8d6b3;
-    --color-nbex-red-1: #ffa07a;
-    --color-nbex-red-2: #ff7a5c;
-    --color-nbex-red-3: #ff6b6b;
-    --color-nbex-pink-0: #fcdfff;
-    --color-nbex-pink-1: #ffc0cb;
-    --color-nbex-pink-2: #ffb2ef;
-    --color-nbex-pink-3: #ff69b4;
-    --color-nbex-purple-0: #e3dff2;
-    --color-nbex-purple-1: #c4a1ff;
-    --color-nbex-purple-2: #a388ee;
-    --color-nbex-purple-3: #9723c9;
+    --color-crayola-blue: #2c75ff;
+    --color-full-blue: #0056f8;
+    --color-icy-blue: #bbe9fd;
+    --color-blazing-flame: #ff3503;
+    --color-scarlet-fire: #f82600;
+    --color-alabaster-grey: #e5e5e5;
+    --color-tea-green: #e9fdbb;
+    --color-mauve: #cfbbfd;
+    --color-pink-orchid: #f0c0e8;
+    --color-peach-fuzz: #fdcfbb;
+    --color-tangerine-dream: #fb9b71;
+    --color-coffee-bean: #281b14;
 }
