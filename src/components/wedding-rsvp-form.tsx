@@ -12,7 +12,7 @@ interface FormDataState {
     dietary: string
 }
 
-function WeddingRSVPForm() {
+export default function WeddingRSVPForm() {
     const [formData, setFormData] = useState<FormDataState>({
         name: '',
         phone: '',
@@ -200,5 +200,3 @@ function WeddingRSVPForm() {
         </div>
     )
 }
-
-export default WeddingRSVPForm
