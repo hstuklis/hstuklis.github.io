@@ -1,17 +1,25 @@
 import React, { useEffect, useRef, useState, type JSX} from 'react'
 
-interface args {
+interface Args {
     text?: string
+    repeats?: number
+    lines?: number
     classes?: string
     children?: React.ReactNode
 }
 
-export default function RepeatedTextBG({ text = 'dev', classes = '', children}: args) {
+export default function RepeatedTextBG({ 
+    text = 'dev', 
+    repeats = 100,
+    lines = 100,
+    classes = '', 
+    children
+}: Args) {
     const generateLines = () => {
         const result: JSX.Element[] = []
-        for(let i = 0; i < 100; i++) {
+        for(let i = 0; i < lines; i++) {
             result.push(
-                <div key={i}>{Array(100).fill(text).join(' ')}</div>
+                <div key={i}>{Array(repeats).fill(text).join(' ')}</div>
             )
         }
         return result
