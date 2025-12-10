@@ -7,14 +7,16 @@ interface Props {
     description?: string
     tags?: string[]
     author?: string
+    bgtext?: string
 }
 
-const { title, description, tags, author } = Astro.props
+const { title, description, tags, author, bgtext } = Astro.props
 const pageUrl = new URL(Astro.url.pathname, Astro.site).href.replace(/\/$/, '') 
 const pageType = Astro.url.pathname.startsWith('/posts') ? 'post' : 'website'
 const pageTitle = title ? `${title} » ${Config.title}` : Config.title
 const pageDescription = description || Config.description
 const pageAuthor = author || Config.author
+const pageBackgroundText = bgtext || ""
 const pageImage =
   pageType === 'post'
     ? Astro.url.origin +
@@ -57,8 +59,8 @@ const pageKeywords = [
         <title>{pageTitle}</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.css">
     </head>
-    <body class="max-w-screen-2xl mx-auto text-coffee-bean bg-alabaster-grey font-public-sans">
-        <RepeatedTextBG text="DEV" repeats={120} lines={100} classes="whitespace-nowrap absolute inset-0 overflow-hidden select-none opacity-10 text-coffee-bean"></RepeatedTextBG>
+    <body class="max-w-screen-xl mx-auto text-coffee-bean bg-alabaster-grey font-public-sans">
+        <RepeatedTextBG text=`${pageBackgroundText}` repeats={140} lines={140} classes="whitespace-nowrap absolute inset-0 overflow-hidden select-none opacity-10 text-coffee-bean"></RepeatedTextBG>
         <div class="relative z-10 px-8 flex flex-col bg-tea-green border border-coffee-bean border-b-6">
             <header>
                 <nav class="flex flex-row flex-wrap justify-between items-end my-4 bg-mauve border border-b-4 px-2 py-1 font-bold">
