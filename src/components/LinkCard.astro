@@ -1,0 +1,40 @@
+---
+import type { LinkSection } from '../data/links';
+
+interface Props {
+  section: LinkSection;
+}
+const { section } = Astro.props;
+---
+
+<div class={`
+    ${section.color || 'bg-white'} 
+    border border-b-4 border-coffee-bean 
+    p-6 
+    h-full
+`}>
+  <h3 class="text-xl font-bold font-archivo mb-4 border-b border-coffee-bean pb-2">
+    {section.title}
+  </h3>
+  <ul class="space-y-3">
+    {section.items.map((item) => (
+      <li>
+        <a 
+          href={item.url} 
+          target="_blank" 
+          rel="noopener noreferrer"
+          class="group block"
+        >
+          <img 
+            src={`https://unavatar.io/${new URL(item.url).hostname}`} 
+            alt="" 
+            class="w-6 h-6 mr-3 inline-block border border-coffee-bean/20 bg-alabaster-grey"
+          />
+          <span class="decoration-coffee-bean decoration-wavy group-hover:underline align-bottom">
+            {item.label}
+          </span>
+        </a>
+      </li>
+    ))}
+  </ul>
+</div>

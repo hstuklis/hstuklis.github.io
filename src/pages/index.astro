@@ -1,10 +1,28 @@
 ---
 import Layout from "../layouts/layout.astro"
+import LinkCard from "../components/LinkCard.astro"
+import { linkSections } from "../data/links"
 ---
-<Layout title="Home" bgtext="Dev">
-	<h1>Blog Posts</h1>
-	<ul>
-		<li><a href="/posts/1">Post 1 - 2025/11/17</a></li>
-	</ul>
-	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas finibus enim odio, ut fringilla nisl pulvinar vitae. Maecenas in aliquet lorem. Donec in odio neque. Sed porta eros at nisl iaculis eleifend. Morbi tristique, quam a pulvinar ultrices, ante felis luctus metus, eu consectetur eros lorem eget dui. Praesent accumsan gravida magna, vitae blandit nibh dignissim dignissim. Maecenas tempus consequat tincidunt. Sed nec sapien eu urna lobortis faucibus. Aenean cursus ex erat, et congue tortor egestas et.
+
+<Layout title="Home" bgtext="家">
+  <div class="pb-4 space-y-12">
+    <section class="border border-b-6 border-coffee-bean p-8 bg-slbr-bg-1 relative overflow-hidden group">
+      <div class="relative z-10">
+        <h1 class="text-6xl md:text-8xl font-black font-archivo mb-4 text-coffee-bean tracking-tighter">
+            HELLO_WORLD
+        </h1>
+      </div>
+      <div class="absolute -right-0 -bottom-0 select-none opacity-80">
+         <span class="text-9xl">🦧</span>
+      </div>
+    </section>
+    <section>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {linkSections.map((section) => (
+          <LinkCard section={section} />
+        ))}
+      </div>
+    </section>
+    
+  </div>
 </Layout>

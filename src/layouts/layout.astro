@@ -13,7 +13,7 @@ interface Props {
 const { title, description, tags, author, bgtext } = Astro.props
 const pageUrl = new URL(Astro.url.pathname, Astro.site).href.replace(/\/$/, '') 
 const pageType = Astro.url.pathname.startsWith('/posts') ? 'post' : 'website'
-const pageTitle = title ? `${title} » ${Config.title}` : Config.title
+const pageTitle = title ? `${title} // ${Config.title}` : Config.title
 const pageDescription = description || Config.description
 const pageAuthor = author || Config.author
 const pageBackgroundText = bgtext || ""
@@ -49,7 +49,7 @@ const pageKeywords = [
         <meta name="keywords" content={pageKeywords} />
         <link rel="canonical" href={pageUrl} />
         <link rel="sitemap" href="/sitemap-index.xml" />
-        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text x=%2250%22 y=%2255%22 dominant-baseline=%22central%22 text-anchor=%22middle%22 font-size=%22100%22>🦧</text></svg>" />
         <link
             rel="alternate"
             type="application/rss+xml"
@@ -64,7 +64,7 @@ const pageKeywords = [
         <div class="relative z-10 px-8 flex flex-col bg-tea-green border border-coffee-bean border-b-6">
             <header>
                 <nav class="flex flex-row flex-wrap justify-between items-end my-4 bg-mauve border border-b-4 px-2 py-1 font-bold">
-                    <h2 class="text-3xl pr-8 font-archivo"><a href="/" title="Home" class="hover:text-full-blue">henstuk<a/>◈<a href="https://github.com/hstuklis" title="github.com/hstuklis" class="hover:text-scarlet-fire">dev<a/></h2>
+                    <h2 class="text-3xl pr-8 font-archivo"><a href="/" title="Home" class="hover:text-full-blue">hstuklis<a/>◈<a href="https://github.com/hstuklis" title="github.com/hstuklis" class="hover:text-scarlet-fire">dev<a/></h2>
                     <ul class="flex flex-row text-xl font-epilogue">
                         <li class="mr-2 hover:text-full-blue"><a href="/about" title="About">About</a></li>
                         <li class="mr-2">◇</li>
