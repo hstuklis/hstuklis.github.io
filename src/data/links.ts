@@ -38,7 +38,7 @@ export const linkSections: LinkSection[] = [
     ],
     color: "bg-tangerine-dream"
   },
-   {
+  {
     title: "Tools",
     items: [
       { label: "Excalidraw", url: "https://excalidraw.com"},
@@ -46,5 +46,5 @@ export const linkSections: LinkSection[] = [
       { label: "JSON Crack", url: "https://jsoncrack.com"},
     ],
     color: "bg-icy-blue"
-  }
+  },
 ];

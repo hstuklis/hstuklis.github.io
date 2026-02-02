@@ -11,14 +11,14 @@ const { section } = Astro.props;
     ${section.color || 'bg-white'} 
     border border-b-4 border-coffee-bean 
     p-6 
-    h-full
+    break-inside-avoid
 `}>
   <h3 class="text-xl font-bold font-archivo mb-4 border-b border-coffee-bean pb-2">
     {section.title}
   </h3>
   <ul class="space-y-3">
     {section.items.map((item) => (
-      <li>
+      <li class="w-fit">
         <a 
           href={item.url} 
           target="_blank" 
@@ -28,7 +28,7 @@ const { section } = Astro.props;
           <img 
             src={`https://unavatar.io/${new URL(item.url).hostname}`} 
             alt="" 
-            class="w-6 h-6 mr-3 inline-block border border-coffee-bean/20 bg-alabaster-grey"
+            class="w-6 h-6 mr-1 inline-block border border-coffee-bean bg-alabaster-grey"
           />
           <span class="decoration-coffee-bean decoration-wavy group-hover:underline align-bottom">
             {item.label}
