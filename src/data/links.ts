@@ -12,38 +12,37 @@ export interface LinkSection {
 
 export const linkSections: LinkSection[] = [
   {
-    title: "Dev News",
+    title: "Tools",
     items: [
-      { label: "Hacker News", url: "https://news.ycombinator.com"},
-      { label: "Lobsters", url: "https://lobste.rs"},
-      { label: "Dev.to", url: "https://dev.to"},
-    ],
-    color: "bg-peach-fuzz"
-  },
-  {
-    title: "Design Inspiration",
-    items: [
-      { label: "Dribbble", url: "https://dribbble.com"},
-      { label: "Awwwards", url: "https://www.awwwards.com"},
-      { label: "Brutalist Websites", url: "https://brutalistwebsites.com"},
+      { label: "Gemini", url: "https://gemini.google.com/app?hl=en-AU"},
+      { label: "Claude", url: "https://claude.ai/new"},
     ],
     color: "bg-pink-orchid"
   },
   {
-    title: "Learning",
+    title: "News",
     items: [
-      { label: "MDN Web Docs", url: "https://developer.mozilla.org"},
-      { label: "Patterns.dev", url: "https://patterns.dev"},
-      { label: "Roadmap.sh", url: "https://roadmap.sh"},
+      { label: "Wikipedia News", url: "https://en.wikipedia.org/wiki/Portal:Current_events"},
+      { label: "Hacker News", url: "https://news.ycombinator.com"},
+      { label: "Lobsters", url: "https://lobste.rs"},
+      { label: "The Brutalist Report", url: "https://brutalist.report/"},
+    ],
+    color: "bg-peach-fuzz"
+  },
+  {
+    title: "Design",
+    items: [
+      { label: "Coolers", url: "https://coolors.co/"},
+      { label: "Colors.lol", url: "https://colors.lol/"},
+      { label: "Google Fonts", url: "https://fonts.google.com/"},
+      { label: "Brutalist Websites", url: "https://brutalistwebsites.com"},
     ],
     color: "bg-tangerine-dream"
   },
   {
-    title: "Tools",
+    title: "Learning",
     items: [
-      { label: "Excalidraw", url: "https://excalidraw.com"},
-      { label: "Squoosh", url: "https://squoosh.app"},
-      { label: "JSON Crack", url: "https://jsoncrack.com"},
+      { label: "Roadmap.sh", url: "https://roadmap.sh"},
     ],
     color: "bg-icy-blue"
   },
