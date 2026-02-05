@@ -9,32 +9,8 @@ export const quotes: Quote[] = [
         reference: "Arthur C. Clarke"
     },
     {
-        text: "The ending of the words is ALMSIVI.",
-        reference: "The 36 Lessons of Vivec, Sermon 1"
-    },
-    {
-        text: "For I have crushed a world with my left hand, but in my right hand is how it could have won against me. Love is under my will only.",
-        reference: "The 36 Lessons of Vivec, Sermon 1"
-    },
-    {
         text: "Six are the formulas to heaven by violence, one that you have learned by studying these words.",
         reference: "The 36 Lessons of Vivec, Sermon 6"
-    },
-    {
-        text: "The Sun shall be eaten by lions, which cannot be found yet in Veloth.",
-        reference: "The 36 Lessons of Vivec, Sermon 6"
-    },
-    {
-        text: "There is an eon within itself that when unraveled becomes the first sentence of the world.",
-        reference: "The 36 Lessons of Vivec, Sermon 6"
-    },
-    {
-        text: "His death is only a diagram back to the waking world.",
-        reference: "The 36 Lessons of Vivec, Sermon 11"
-    },
-    {
-        text: "I am an atlas of smoke. Seek me without effort for I take many shapes.",
-        reference: "The 36 Lessons of Vivec, Sermon 17"
     },
     {
         text: "The enlightened are those uneaten by the world.",
@@ -45,7 +21,23 @@ export const quotes: Quote[] = [
         reference: "The 36 Lessons of Vivec, Sermon 27"
     },
     {
-        text: "Annihilation is the pleasure of disappearing into the unreal.",
-        reference: "The 36 Lessons of Vivec, Sermon 32"
-    }
+        text: "The secret Tower within the Tower is the shape of the only name of God, I.",
+        reference: "The 36 Lessons of Vivec, Sermon 21"
+    },
+    {
+        text: "I put a star into the world's mouth to murder it.",
+        reference: "Dagoth Ur"
+    },
+    {
+        text: "I am a god. How can you kill a god? What a grand and intoxicating innocence.",
+        reference: "Dagoth Ur"
+    },
+    {
+        text: "We are like the dreamer who dreams, and then lives inside the dream. But who is the dreamer?",
+        reference: "Monica Bellucci (to Gordon Cole)"
+    },
+    {
+        text: "I don't need anything. I want.",
+        reference: "Mr. C"
+    },
 ];

@@ -34,7 +34,7 @@ export default function QuoteText() {
                 {quote.text}
             </h1>
             <p className="text-md md:text-xl font-bold font-archivo text-coffee-bean/80">
-                - {quote.reference}
+                -- {quote.reference}
             </p>
         </div>
     );
