@@ -33,8 +33,8 @@ export default function QuoteText() {
             <h1 className="text-4xl md:text-6xl font-black font-archivo text-coffee-bean tracking-tighter">
                 {quote.text}
             </h1>
-            <p className="text-md md:text-xl font-bold font-archivo text-coffee-bean/80">
-                -- {quote.reference}
+            <p className="text-md md:text-xl font-bold font-archivo text-coffee-bean/80 overline">
+                {quote.reference}
             </p>
         </div>
     );
