@@ -3,18 +3,25 @@ import Layout from "../layouts/layout.astro"
 import RepeatedTextBG from "../components/RepeatedTextBG.tsx"
 ---
 <Layout title="About" bgtext="自分">
-	<div class="flex lg:flex-row flex-col lg:divide-x lg:divide-y-0 divide-y py-2 px-4 bg-white border border-b-4">
+	<div class="flex lg:flex-row flex-col lg:divide-x lg:divide-y-0 divide-y py-2 px-4 bg-peach border border-b-4">
 		<h1 class="font-ibm xl:text-7xl lg:text-5xl text-5xl pr-4 py-2 font-bold tracking-tighter">Henry Stuklis</h1>
-		<p class="flex-1 lg:pl-4 py-2">Senior Software Developer ◇ Principal Data Engineer ◇ Complex Dataflows & Infrastructure ◇ Robust Scalable ETL/ELT Pipelines ◇ Evergreen, Agile & Responsive Delivery Patterns ◇ M.DataSc & B.MathSc</p>
+		<p class="flex-1 lg:pl-4 py-2">Senior Software Developer · M.DataSc & B.MathSc</p>
 	</div>
-	<div class="flex md:flex-row flex-col my-4">
-		<div class="relative xl:w-1/5 lg:w-1/4 md:w-1/3 sm:w-1/2 border border-b-4 bg-icy-blue">
-			<RepeatedTextBG text="もしもし" repeats={6} lines={11} classes="w-full h-full overflow-hidden whitespace-nowrap absolute select-none opacity-10 text-black text-xl tracking-tighter">
+	<div class="flex md:flex-row flex-col my-4 items-start">
+		<div class="relative xl:w-1/5 lg:w-1/4 md:w-1/3 sm:w-1/2 border border-b-4 bg-peach shrink-0">
+			<RepeatedTextBG text="もしもし" repeats={6} lines={11} classes="w-full h-full overflow-hidden whitespace-nowrap absolute select-none opacity-20 text-coffee text-xl tracking-tighter">
 				<img src="headshot.png" alt="Headshot">
 			</RepeatedTextBG>
 		</div>
-		<div class="flex-1 ml-4 text-md">
-			Hi I'm Henry, I'm a data infrastructure focussed software developer.
+		<div class="ml-4 border-l border-black pl-4 text-md space-y-3">
+			<p>Hi, I'm Henry - a senior software developer and data engineer.</p>
+			<p>My background is in applied mathematics, with a master's in data science on top. I spent several years at the Australian Bureau of Statistics building government-scale data pipelines - including leading the AIR weekly ETL pipeline as part of Australia's COVID-19 statistical response. I'm now at DXC Technology working on defence projects.</p>
+			<div class="space-y-1">
+				<div><span class="font-bold">Languages & Frameworks</span> — Java, Spring Boot, Python, PySpark, SQL, Golang, C, Unix</div>
+				<div><span class="font-bold">Infrastructure & DevOps</span> — Kubernetes, Docker, AWS, Azure Synapse, GitLab CI, GitHub Actions</div>
+				<div><span class="font-bold">Data Engineering</span> — ETL/ELT pipeline design, data integration, distributed computing</div>
+			</div>
+			<p>Away from the keyboard: too much coffee, chess, classic 2000s games (Pokémon, Runescape, Jak, Ratchet, Morrowind), Anbennar campaigns that run way too long, Gene Wolfe's Book of the New Sun, and the occasional David Lynch rewatch.</p>
 		</div>
 	</div>
 </Layout>

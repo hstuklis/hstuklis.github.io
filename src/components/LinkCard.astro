@@ -8,32 +8,30 @@ const { section } = Astro.props;
 ---
 
 <div class={`
-    ${section.color || 'bg-white'} 
-    border border-b-4 border-coffee-bean 
+    ${section.color || 'bg-peach'} 
+    border border-b-4 border-coffee 
     p-6 
     break-inside-avoid
     mb-6
 `}>
-  <h3 class="text-xl font-bold font-archivo mb-4 border-b border-coffee-bean pb-2">
+  <h3 class="text-xl font-bold font-archivo mb-4 border-b border-coffee pb-2">
     {section.title}
   </h3>
   <ul class="space-y-3">
     {section.items.map((item) => (
       <li class="w-fit">
-        <a 
-          href={item.url} 
-          target="_blank" 
+        <a
+          href={item.url}
+          target="_blank"
           rel="noopener noreferrer"
-          class="group block"
+          class="group flex items-center gap-1"
         >
-          <img 
-            src={`https://unavatar.io/${new URL(item.url).hostname}`} 
-            alt="" 
-            class="w-6 h-6 mr-1 inline-block border border-coffee-bean bg-coffee-bean"
+          <img
+            src={`https://www.google.com/s2/favicons?domain=${new URL(item.url).hostname}&sz=32`}
+            alt=""
+            class="w-4 h-4 border border-coffee bg-coffee"
           />
-          <span class="decoration-coffee-bean decoration-wavy group-hover:underline align-bottom">
-            {item.label}
-          </span>
+          <span class="group-hover:underline group-hover:decoration-coffee group-hover:decoration-wavy">{item.label}</span>
         </a>
       </li>
     ))}

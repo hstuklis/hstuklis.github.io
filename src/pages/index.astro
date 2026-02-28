@@ -1,23 +1,23 @@
 ---
 import Layout from "../layouts/layout.astro"
 import LinkCard from "../components/LinkCard.astro"
-import QuoteText from "../components/QuoteText"
+import QuoteText from "../components/QuoteText.astro"
 import { linkSections } from "../data/links"
 ---
 
 <Layout title="Home" bgtext="家">
   <div class="pb-4 space-y-6">
-    <section class="border border-b-4 border-coffee-bean p-8 bg-white relative overflow-hidden group">
+    <section class="border border-b-4 p-8 bg-peach relative overflow-hidden group">
       <div class="absolute inset-0 z-0 opacity-10 pointer-events-none mix-blend-multiply" style="background-image: repeating-radial-gradient( circle at 100% 100%, transparent 0, transparent 20px, #281b14 20px, #281b14 21px);"></div>
       <div class="relative z-10 pb-24">
-        <QuoteText client:load />
+        <QuoteText />
       </div>
       <div class="absolute -right-0 -bottom-0 select-none opacity-80">
-         <span class="text-9xl">🦧</span>
+         <span class="text-9xl" style="filter: drop-shadow(1px 0 0 #281b14) drop-shadow(-1px 0 0 #281b14) drop-shadow(0 1px 0 #281b14) drop-shadow(0 -1px 0 #281b14)">🦧</span>
       </div>
     </section>
     <section>
-      <div class="columns-1 md:columns-2 lg:columns-4 gap-6">
+      <div class="columns-1 md:columns-2 lg:columns-3 gap-6">
         {linkSections.map((section) => (
           <LinkCard section={section} />
         ))}

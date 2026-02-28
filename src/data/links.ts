@@ -17,7 +17,6 @@ export const linkSections: LinkSection[] = [
       { label: "Gemini", url: "https://gemini.google.com/"},
       { label: "Claude", url: "https://claude.ai/new"},
     ],
-    color: "bg-pink-orchid"
   },
   {
     title: "News",
@@ -27,14 +26,12 @@ export const linkSections: LinkSection[] = [
       { label: "Lobsters", url: "https://lobste.rs"},
       { label: "Brutalist Report", url: "https://brutalist.report/"},
     ],
-    color: "bg-peach-fuzz"
   },
   {
     title: "Learning",
     items: [
       { label: "Roadmap.sh", url: "https://roadmap.sh"},
     ],
-    color: "bg-tangerine-dream"
   },
   {
     title: "Front-End Design",
@@ -42,9 +39,25 @@ export const linkSections: LinkSection[] = [
       { label: "Brutalist Websites", url: "https://brutalistwebsites.com"},
       { label: "Google Fonts", url: "https://fonts.google.com/"},
       { label: "Colors.lol", url: "https://colors.lol/"},
-      { label: "Coolers", url: "https://coolors.co/"},
+      { label: "Coolors", url: "https://coolors.co/"},
     ],
-    color: "bg-icy-blue"
+  },
+  {
+    title: "Back-End",
+    items: [
+      { label: "DevDocs", url: "https://devdocs.io/"},
+    ],
+  },
+  {
+    title: "Awesome Lists",
+    items: [
+      { label: "awesome-c", url: "https://github.com/oz123/awesome-c"},
+      { label: "awesome-go", url: "https://github.com/avelino/awesome-go"},
+      { label: "awesome-python", url: "https://github.com/vinta/awesome-python"},
+      { label: "awesome-selfhosted", url: "https://github.com/awesome-selfhosted/awesome-selfhosted"},
+      { label: "awesome-gamedev", url: "https://github.com/Calinou/awesome-gamedev"},
+      { label: "awesome-cli-apps", url: "https://github.com/agarrharr/awesome-cli-apps"},
+    ],
   },
 
   {
@@ -57,7 +70,6 @@ export const linkSections: LinkSection[] = [
       { label: "Chess.com", url: "https://www.chess.com/home"},
       { label: "Geoguessr", url: "https://www.geoguessr.com/"},
     ],
-    color: "bg-seafoam-green"
   },
   {
     title: "Cool",
@@ -65,6 +77,5 @@ export const linkSections: LinkSection[] = [
       { label: "Speedruns", url: "https://speedrun.com/"},
       { label: "Romhacking.net", url: "https://www.romhacking.net/"},
     ],
-    color: "bg-powder-pink"
   },
 ];

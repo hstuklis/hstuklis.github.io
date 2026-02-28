@@ -15,6 +15,7 @@
 
 @import "tailwindcss";
 @theme {
+    /* Fonts */
     --font-ibm: 'IBM Plex Mono', monospace;
     --font-jetbrains: 'JetBrains Mono', monospace;
     --font-pacifico: 'Pacifico', cursive;
@@ -30,6 +31,7 @@
     --font-sora: 'Sora', sans-serif;
     --font-syne: 'Syne', sans-serif;
 
+    /* Code Colouring */
     --color-sl-bg-0: #103c48;
     --color-sl-bg-1: #184956;
     --color-sl-bg-2: #2d5b69;
@@ -122,22 +124,12 @@
     --color-slw-br-orange: #ba3700;
     --color-slw-br-violet: #6b40c3;
 
-    --color-crayola-blue: #2c75ff;
-    --color-full-blue: #0056f8;
-    --color-icy-blue: #bbe9fd;
-    --color-blazing-flame: #ff3503;
-    --color-scarlet-fire: #f82600;
-    --color-alabaster-grey: #e5e5e5;
-    --color-tea-green: #e9fdbb;
-    --color-mauve: #cfbbfd;
-    --color-pink-orchid: #f0c0e8;
-    --color-peach-fuzz: #fdcfbb;
-    --color-tangerine-dream: #fb9b71;
-    --color-coffee-bean: #281b14;
-    --color-red-blush: #f19e8e;
-    --color-reddish-grey: #98756f;
-    --color-slate-grey: #58656d;
-    --color-strawy-blue: #7bc8f6;
-    --color-seafoam-green: #a7ffb5;
-    --color-powder-pink: #feb2d0;
+    /* Page Colouring */
+    --color-coffee: #281b14;
+    --color-mahogany: #3c0008;
+    --color-red: #9f2d2d;
+    --color-bronze: #c65102;
+    --color-coral: #fc824a;
+    --color-peach: #f1b498;
+    --color-grey: #e5e5e5;
 }

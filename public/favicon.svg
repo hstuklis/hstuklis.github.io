@@ -1,3 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-  <text x="50" y="50" dominant-baseline="central" text-anchor="middle" font-size="80">🦧</text>
+  <defs>
+    <filter id="outline" x="-10%" y="-10%" width="120%" height="120%">
+      <feMorphology in="SourceAlpha" result="expanded" operator="dilate" radius="1"/>
+      <feFlood flood-color="#281b14" result="color"/>
+      <feComposite in="color" in2="expanded" operator="in" result="outline"/>
+      <feMerge>
+        <feMergeNode in="outline"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <text x="50" y="50" dominant-baseline="central" text-anchor="middle" font-size="80" filter="url(#outline)">🦧</text>
 </svg>
