@@ -1,35 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Archivo+Black');
-@import url('https://fonts.googleapis.com/css2?family=Fascinate');
-@import url('https://fonts.googleapis.com/css2?family=Fascinate+Inline');
-@import url('https://fonts.googleapis.com/css2?family=Limelight');
-@import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800');
-@import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900');
-@import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900');
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800');
-@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800');
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400..800&display=swap');
-
 @import "tailwindcss";
 @theme {
     /* Fonts */
     --font-ibm: 'IBM Plex Mono', monospace;
-    --font-jetbrains: 'JetBrains Mono', monospace;
     --font-pacifico: 'Pacifico', cursive;
     --font-archivo: 'Archivo Black', normal;
-    --font-fascinate: 'Fascinate', system-ui;
-    --font-fascinate-inline: 'Fascinate Inline', system-ui;
-    --font-limelight: 'Limelight', sans-serif;
     --font-public-sans: 'Public Sans', sans-serif;
-    --font-bricolage: 'Bricolage Grotesque', sans-serif;
-    --font-grotesque: 'Darker Grotesque', sans-serif;
-    --font-epilogue: 'Epilogue', sans-serif;
-    --font-jakarta: 'Plus Jakarta Sans', sans-serif;
-    --font-sora: 'Sora', sans-serif;
-    --font-syne: 'Syne', sans-serif;
 
     /* Code Colouring */
     --color-sl-bg-0: #103c48;
