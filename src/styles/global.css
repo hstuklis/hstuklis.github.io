@@ -1,4 +1,40 @@
 @import "tailwindcss";
+
+@keyframes heroIn {
+	from {
+		opacity: 0;
+		transform: translateY(12px) scale(0.98);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0) scale(1);
+	}
+}
+.hero-in {
+	animation: heroIn 0.6s ease-out both;
+}
+.hero-in-1 { animation-delay: 0.05s; }
+.hero-in-2 { animation-delay: 0.15s; }
+.hero-in-3 { animation-delay: 0.28s; }
+
+@keyframes heroInFade {
+	from { opacity: 0; }
+	to   { opacity: 1; }
+}
+.hero-in-4 {
+	animation: heroInFade 0.7s ease-out both;
+	animation-delay: 0.38s;
+}
+
+.reveal {
+	opacity: 0;
+	transform: translateY(16px);
+	transition: opacity 0.45s ease, transform 0.45s ease;
+}
+.reveal.visible {
+	opacity: 1;
+	transform: none;
+}
 @theme {
     /* Fonts */
     --font-ibm: 'IBM Plex Mono', monospace;

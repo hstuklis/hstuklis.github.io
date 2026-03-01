@@ -61,6 +61,7 @@ const pageKeywords = [
         />
         <title>{pageTitle}</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     </head>
     <body class="max-w-screen-lg mx-auto text-coffee bg-grey border-coffee font-public-sans">
         <RepeatedTextBG text=`${pageBackgroundText}` repeats={140} lines={140} classes="whitespace-nowrap fixed inset-0 overflow-hidden select-none opacity-10 text-red"></RepeatedTextBG>
@@ -87,5 +88,20 @@ const pageKeywords = [
                     <hr class="border-0 border-t border-coral">
                 <div/>
         <div/>
+    <script>
+        const reveals = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry, i) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            },
+            { threshold: 0.08 }
+        );
+        reveals.forEach(el => observer.observe(el));
+    </script>
     </body>
 </html>

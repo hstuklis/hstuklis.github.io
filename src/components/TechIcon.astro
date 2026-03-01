@@ -1,0 +1,15 @@
+---
+interface Props {
+  icon: string;
+  label: string;
+  isEmoji?: boolean;
+}
+const { icon, label, isEmoji = false } = Astro.props;
+---
+<div class="border-r border-b border-peach/10 flex flex-col items-center justify-center gap-2 p-4 group hover:bg-peach/5 transition-colors">
+  {isEmoji
+    ? <span class="text-4xl leading-none" aria-label={label}>{icon}</span>
+    : <i class={`${icon} text-4xl text-coral group-hover:text-peach transition-colors`}></i>
+  }
+  <span class="font-ibm text-xs text-peach/50 tracking-wide group-hover:text-peach/80 transition-colors">{label}</span>
+</div>
