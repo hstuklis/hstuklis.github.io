@@ -26,23 +26,21 @@ const techGroups = [
   {
     label: "Data Stack",
     icons: [
-      { icon: "devicon-apachespark-plain",  label: "PySpark" },
       { icon: "devicon-apachekafka-plain",  label: "Kafka" },
       { icon: "🐿️",                        label: "Flink",    isEmoji: true },
+      { icon: "devicon-redis-plain",        label: "Redis" },
       { icon: "devicon-postgresql-plain",   label: "Postgres" },
+      { icon: "devicon-neo4j-plain",        label: "Neo4j" },
     ],
   },
   {
     label: "Infra & Tools",
     icons: [
-      { icon: "devicon-amazonwebservices-plain", label: "AWS S3" },
       { icon: "devicon-docker-plain",            label: "Docker" },
       { icon: "devicon-kubernetes-plain",        label: "K8s" },
-      { icon: "devicon-debian-plain",            label: "Debian" },
-      { icon: "devicon-linux-plain",             label: "Unix" },
+      { icon: "devicon-amazonwebservices-plain", label: "S3" },
+      { icon: "devicon-linux-plain",             label: "Linux" },
       { icon: "devicon-git-plain",               label: "GitOps" },
-      { icon: "devicon-spring-original",         label: "Spring Boot" },
-      { icon: "devicon-raspberrypi-plain",       label: "Raspi" },
     ],
   },
 ];
@@ -51,17 +49,17 @@ const expertise = [
   {
     num: "01",
     title: "Data Engineering",
-    body: "Most of my career has involved transforming data from complex sources into something analysts can actually trust and use. At the ABS I led ETL pipelines at national scale - including running the Australian Immunisation Register weekly delivery as part of the Government's COVID-19 statistical response. That same focus on reliability and traceability carries into everything I build now.",
+    body: "Most of my career has involved transforming data from complex sources into something analysts can actually trust and use. My focus on reliability and traceability carries into everything I build.",
   },
   {
     num: "02",
     title: "Software Dev",
-    body: "I've moved between Python and Java depending on what the job needs - PySpark pipelines on Azure, Spring Boot microservices on AWS, all containerised and deployed with Docker and Kubernetes. I care about owning the full lifecycle: good design up front, solid CI/CD, and code that someone else can actually maintain.",
+    body: "I've mainly moved between Python and Java depending on what the job needs. I care about owning the full lifecycle: good design up front, solid CI/CD, detailed documentation and code that someone else can actually maintain.",
   },
   {
     num: "03",
     title: "Applied Maths",
-    body: "My B.MathSc in Applied Mathematics and an M.DataSc gave me a way of tackling problems beyond just a set of memorised facts. I break problems down rigorously, stay comfortable with abstraction, and know when a model is wrong. My background shapes how I approach engineering problems.",
+    body: "My studies have given me a way of tackling problems beyond just a set of rigid frameworks. I break problems down rigorously, stay comfortable with abstraction, and know when the model or architecture is wrong.",
   },
 ];
 ---
@@ -119,23 +117,20 @@ const expertise = [
 	<!-- TECH STACK -->
 	<section class="border border-b-4 border-coffee bg-coffee mb-8 reveal">
 		<div class="px-8 py-10">
-			<p class="font-ibm text-xs tracking-widest uppercase text-peach/40 mb-1">技術 - Tech</p>
-			<h2 class="font-archivo text-4xl lg:text-5xl tracking-tighter mb-8 text-peach">Tools of Trade</h2>
-			<div class="grid grid-cols-1 lg:grid-cols-2 gap-px bg-peach/10 border border-peach/10">
-				{techGroups.slice(0, 2).map(group => (
-					<div class="bg-coffee">
-						<p class="font-ibm text-[10px] text-peach/30 tracking-widest uppercase px-4 pt-3 pb-1">{group.label}</p>
-						<div class="grid grid-cols-4 border-t border-l border-peach/10">
+			<p class="font-ibm text-xs tracking-widest uppercase text-coral/40 mb-1">技術 - Tech</p>
+			<h2 class="font-archivo text-4xl lg:text-5xl tracking-tighter mb-10 text-coral">Tools of Trade</h2>
+			<div class="flex flex-col gap-8">
+				{techGroups.map(group => (
+					<div>
+						<div class="flex items-center gap-4 mb-4">
+							<span class="font-ibm text-[10px] text-peach/30 tracking-widest uppercase shrink-0">{group.label}</span>
+							<div class="flex-1 h-px bg-peach/10"></div>
+						</div>
+						<div class="grid gap-2" style={`grid-template-columns: repeat(${group.icons.length}, 1fr)`}>
 							{group.icons.map(t => <TechIcon icon={t.icon} label={t.label} isEmoji={t.isEmoji} />)}
 						</div>
 					</div>
 				))}
-				<div class="bg-coffee lg:col-span-2">
-					<p class="font-ibm text-[10px] text-peach/30 tracking-widest uppercase px-4 pt-3 pb-1">{techGroups[2].label}</p>
-					<div class="grid grid-cols-4 lg:grid-cols-8 border-t border-l border-peach/10">
-						{techGroups[2].icons.map(t => <TechIcon icon={t.icon} label={t.label} isEmoji={t.isEmoji} />)}
-					</div>
-				</div>
 			</div>
 		</div>
 	</section>
