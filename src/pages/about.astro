@@ -1,0 +1,167 @@
+---
+import Layout from "../layouts/layout.astro"
+import RepeatedTextBG from "../components/RepeatedTextBG.tsx"
+import TechIcon from "../components/TechIcon.astro"
+import StatItem from "../components/StatItem.astro"
+import ExpertiseCard from "../components/ExpertiseCard.astro"
+import CtaLink from "../components/CtaLink.astro"
+
+const stats = [
+  { value: "5+",             label: "Years Experience" },
+  { value: "Backend",     label: "Big Data Focussed" },
+  { value: "TUI",           label: "\\033[ artist" },
+  { value: "Homelab", label: "Also runs at 3am" },
+];
+
+const techGroups = [
+  {
+    label: "Languages",
+    icons: [
+      { icon: "devicon-python-plain",  label: "Python" },
+      { icon: "devicon-java-plain",    label: "Java" },
+      { icon: "devicon-go-plain",      label: "Go" },
+      { icon: "devicon-c-plain",       label: "C" },
+    ],
+  },
+  {
+    label: "Data Stack",
+    icons: [
+      { icon: "devicon-apachekafka-plain",  label: "Kafka" },
+      { icon: "🐿️",                        label: "Flink",    isEmoji: true },
+      { icon: "devicon-redis-plain",        label: "Redis" },
+      { icon: "devicon-postgresql-plain",   label: "Postgres" },
+      { icon: "devicon-neo4j-plain",        label: "Neo4j" },
+    ],
+  },
+  {
+    label: "Infra & Tools",
+    icons: [
+      { icon: "devicon-docker-plain",            label: "Docker" },
+      { icon: "devicon-kubernetes-plain",        label: "K8s" },
+      { icon: "devicon-amazonwebservices-plain", label: "S3" },
+      { icon: "devicon-linux-plain",             label: "Linux" },
+      { icon: "devicon-git-plain",               label: "GitOps" },
+    ],
+  },
+];
+
+const expertise = [
+  {
+    num: "01",
+    title: "Data Engineering",
+    body: "Most of my career has involved transforming data from complex sources into something analysts can actually trust and use. My focus on reliability and traceability carries into everything I build.",
+  },
+  {
+    num: "02",
+    title: "Software Dev",
+    body: "I've mainly moved between Python and Java depending on what the job needs. I care about owning the full lifecycle: good design up front, solid CI/CD, detailed documentation and code that someone else can actually maintain.",
+  },
+  {
+    num: "03",
+    title: "Applied Maths",
+    body: "My studies have given me a way of tackling problems beyond just a set of rigid frameworks. I break problems down rigorously, stay comfortable with abstraction, and know when the model or architecture is wrong.",
+  },
+];
+---
+
+<Layout title="About" bgtext="自分">
+
+	<!-- HERO -->
+	<section class="border border-b-4 border-coffee bg-peach mb-8 overflow-hidden relative">
+		<div class="absolute inset-0 z-0 opacity-10 pointer-events-none mix-blend-multiply" style="background-image: repeating-radial-gradient(circle at 0% 0%, transparent 0, transparent 20px, #281b14 20px, #281b14 21px);"></div>
+		<div class="relative z-10 flex flex-col lg:flex-row lg:items-stretch">
+			<!-- Left: text -->
+			<div class="flex-1 min-w-0 px-8 py-10 lg:py-14 flex flex-col justify-between gap-8">
+				<div>
+					<p class="hero-in hero-in-1 font-ibm text-xs tracking-widest uppercase text-coffee/50 mb-4">自分 - About Me</p>
+					<h1 class="hero-in hero-in-2 font-archivo text-6xl sm:text-7xl lg:text-9xl tracking-tighter leading-none">
+						Henry<br/>Stuklis
+					</h1>
+				</div>
+				<div class="hero-in hero-in-3 flex flex-col gap-4">
+					<div class="flex flex-wrap gap-2">
+						<span class="font-ibm text-xs border border-coffee/30 px-2 py-1 text-coffee/60 tracking-wide">Software Developer</span>
+						<span class="font-ibm text-xs border border-coffee/30 px-2 py-1 text-coffee/60 tracking-wide">Data Engineer</span>
+						<span class="font-ibm text-xs border border-coffee/30 px-2 py-1 text-coffee/60 tracking-wide">M.DataSc</span>
+						<span class="font-ibm text-xs border border-coffee/30 px-2 py-1 text-coffee/60 tracking-wide">B.MathSc</span>
+					</div>
+					<blockquote class="border-l-4 border-coral pl-4">
+						<p class="font-public-sans text-base lg:text-lg leading-relaxed text-coffee/80 max-w-lg">
+							I make data pipelines that don't break at 3am. Usually.
+						</p>
+					</blockquote>
+					<div class="flex items-baseline gap-2">
+						<span class="font-ibm text-xs text-coffee/40 tracking-widest uppercase shrink-0">Now →</span>
+						<span class="font-public-sans text-sm text-coffee/60">Deving ODSSY my TUI 4X game</span>
+					</div>
+				</div>
+			</div>
+			<!-- Right: photo -->
+			<div class="hero-in hero-in-4 relative w-full lg:w-80 shrink-0 border-t lg:border-t-0 lg:border-l border-coffee overflow-hidden bg-bronze aspect-3/4 sm:aspect-4/3 lg:aspect-auto">
+				<div class="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+					<RepeatedTextBG text="もしもし" repeats={20} lines={120} classes="whitespace-nowrap select-none opacity-50 text-coffee text-sm tracking-tighter pointer-events-none">
+					</RepeatedTextBG>
+				</div>
+				<img src="headshot.png" alt="Henry Stuklis" class="absolute inset-0 w-full h-full object-cover object-top z-10">
+			</div>
+		</div>
+	</section>
+
+	<!-- STATS STRIP -->
+	<section class="border border-b-4 border-coffee bg-mahogany text-peach mb-8 reveal">
+		<div class="grid grid-cols-2 lg:grid-cols-4 divide-x divide-y lg:divide-y-0 divide-peach/10">
+			{stats.map(s => <StatItem value={s.value} label={s.label} />)}
+		</div>
+	</section>
+
+	<!-- TECH STACK -->
+	<section class="border border-b-4 border-coffee bg-coffee mb-8 reveal">
+		<div class="px-8 py-10">
+			<p class="font-ibm text-xs tracking-widest uppercase text-coral/40 mb-1">技術 - Tech</p>
+			<h2 class="font-archivo text-4xl lg:text-5xl tracking-tighter mb-10 text-coral">Tools of Trade</h2>
+			<div class="flex flex-col gap-8">
+				{techGroups.map(group => (
+					<div>
+						<div class="flex items-center gap-4 mb-4">
+							<span class="font-ibm text-[10px] text-peach/30 tracking-widest uppercase shrink-0">{group.label}</span>
+							<div class="flex-1 h-px bg-peach/10"></div>
+						</div>
+						<div class="grid gap-2" style={`grid-template-columns: repeat(${group.icons.length}, 1fr)`}>
+							{group.icons.map(t => <TechIcon icon={t.icon} label={t.label} isEmoji={t.isEmoji} />)}
+						</div>
+					</div>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<!-- EXPERTISE -->
+	<section class="border border-b-4 border-coffee bg-grey mb-8 reveal">
+		<div class="px-8 py-10">
+			<p class="font-ibm text-xs tracking-widest uppercase text-coffee/40 mb-1">専門 - Expertise</p>
+			<h2 class="font-archivo text-4xl lg:text-5xl tracking-tighter mb-8">What I Do</h2>
+			<div class="grid grid-cols-1 md:grid-cols-3 border border-coffee/20 divide-y md:divide-y-0 md:divide-x divide-coffee/20">
+				{expertise.map(e => <ExpertiseCard num={e.num} title={e.title} body={e.body} />)}
+			</div>
+		</div>
+	</section>
+
+	<!-- CTA -->
+	<section class="bg-mahogany text-coral border border-b-4 border-coffee p-8 mb-8 reveal">
+		<p class="font-ibm text-xs uppercase tracking-widest mb-3 text-coral/50">連絡 - Get In Touch</p>
+		<h2 class="font-archivo text-4xl lg:text-5xl tracking-tighter mb-4">Let's Connect</h2>
+		<p class="font-public-sans text-sm text-coral/80 mb-6 max-w-sm">Find me on GitHub or LinkedIn, or reach out directly if you're working on something interesting.</p>
+		<div class="flex flex-wrap gap-3">
+			<CtaLink href="mailto:henry.stuklis@gmail.com" label="Email">
+				<span class="text-base leading-none" aria-hidden="true">✉</span>
+			</CtaLink>
+			<CtaLink href="https://www.linkedin.com/in/henry-stuklis/" label="LinkedIn" external>
+				<i class="devicon-linkedin-plain text-base" aria-hidden="true"></i>
+			</CtaLink>
+			<CtaLink href="https://github.com/hstuklis" label="GitHub" external>
+				<i class="devicon-github-original text-base" aria-hidden="true"></i>
+			</CtaLink>
+		</div>
+	</section>
+
+</Layout>

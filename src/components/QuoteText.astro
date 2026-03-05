@@ -1,0 +1,33 @@
+---
+import { quotes } from '../data/quotes';
+---
+
+<div id="quote-container" class="flex flex-col gap-4">
+    <h1 id="quote-text" class="text-4xl md:text-6xl font-black font-archivo text-coffee tracking-tighter"></h1>
+    <div class="inline-flex flex-col gap-4 self-start">
+        <hr class="border-coffee/80 w-full" />
+        <p id="quote-reference" class="text-md md:text-xl font-bold font-archivo text-coffee/80"></p>
+    </div>
+</div>
+
+<style>
+    #quote-container {
+        animation: quoteIn 1s ease-out forwards;
+    }
+    @keyframes quoteIn {
+        from {
+            opacity: 0;
+            transform: scale(0.95);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+</style>
+
+<script define:vars={{ quotes }}>
+    const quote = quotes[Math.floor(Math.random() * quotes.length)];
+    document.getElementById('quote-text').textContent = quote.text;
+    document.getElementById('quote-reference').textContent = quote.reference;
+</script>

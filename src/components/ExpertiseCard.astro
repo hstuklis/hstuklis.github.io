@@ -1,0 +1,16 @@
+---
+interface Props {
+  num: string;
+  title: string;
+  body: string;
+}
+const { num, title, body } = Astro.props;
+---
+<div class="px-6 py-6 relative overflow-hidden">
+  <div class="absolute inset-0 opacity-5 pointer-events-none mix-blend-multiply" style="background-image: repeating-linear-gradient(45deg, transparent 0, transparent 11px, #281b14 11px, #281b14 12px);"></div>
+  <div class="relative z-10">
+    <p class="font-ibm text-xs text-coffee/30 mb-3 tracking-widest">{num}</p>
+    <h3 class="font-archivo text-xl mb-3">{title}</h3>
+    <p class="font-public-sans text-sm text-coffee/70 leading-relaxed">{body}</p>
+  </div>
+</div>

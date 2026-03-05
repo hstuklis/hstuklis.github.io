@@ -1,34 +1,105 @@
 ---
-import '../styles/global.css';
+import '../styles/global.css'
+import RepeatedTextBG from "../components/RepeatedTextBG.tsx"
+import Config from '~/config'
 interface Props {
-    title: string;
+    title?: string
+    description?: string
+    tags?: string[]
+    author?: string
+    bgtext?: string
 }
-const { title } = Astro.props;
+
+const { title, description, tags, author, bgtext } = Astro.props
+const pageUrl = new URL(Astro.url.pathname, Astro.site).href.replace(/\/$/, '') 
+const pageType = Astro.url.pathname.startsWith('/posts') ? 'post' : 'website'
+const pageTitle = title ? `${title} // ${Config.title}` : Config.title
+const pageDescription = description || Config.description
+const pageAuthor = author || Config.author
+const pageBackgroundText = bgtext || ""
+const pageImage =
+  pageType === 'post'
+    ? Astro.url.origin +
+      Astro.url.pathname.replace(/\/posts\//, '/social-cards/') +
+      '.png'
+    : `${Astro.url.origin}/social-cards/__default.png`
+const pageKeywords = [
+  ...new Set(Config.tags.concat(tags || []).map((word) => word.toLowerCase())),
+].join(', ')
 ---
 
-<html lang="en">
+<!doctype html>
+<html lang="en" class="relative">
     <head>
-        <meta charset="utf-8">
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="generator" content={Astro.generator} />
-        <!-- <Header title={title}/> -->
-         <title>{title}</title>
+        <meta name="title" content={pageTitle} />
+        <meta name="description" content={pageDescription} />
+        <meta name="author" content={pageAuthor} />
+        <meta property="og:title" content={pageTitle} />
+        <meta property="og:description" content={pageDescription} />
+        <meta property="og:url" content={pageUrl} />
+        <meta property="og:type" content={pageType} />
+        {pageImage && <meta property="og:image" content={pageImage} />}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={pageTitle} />
+        <meta name="twitter:description" content={pageDescription} />
+        {pageImage && <meta name="twitter:image" content={pageImage} />}
+        <meta name="keywords" content={pageKeywords} />
+        <link rel="canonical" href={pageUrl} />
+        <link rel="sitemap" href="/sitemap-index.xml" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Mono:ital,wght@0,400;0,600;1,400&family=Pacifico&family=Public+Sans:ital,wght@0,400;0,600;1,400&display=swap" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link
+            rel="alternate"
+            type="application/rss+xml"
+            title={Config.title}
+            href={new URL('rss.xml', Astro.site)}
+        />
+        <title>{pageTitle}</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     </head>
-    <body>
-        <nav>
-            <a href="/">Home</a>
-            <a href="/wedding">Wedding</a>
-        </nav>
-        <h1>{title}</h1>
-        <article>
-            <slot /> <!-- your content is injected here -->
-        </article>
-        <!-- <Footer /> -->
+    <body class="max-w-screen-lg mx-auto text-coffee bg-grey border-coffee font-public-sans">
+        <RepeatedTextBG text=`${pageBackgroundText}` repeats={140} lines={140} classes="whitespace-nowrap fixed inset-0 overflow-hidden select-none opacity-10 text-red"></RepeatedTextBG>
+        <div class="relative z-10 flex flex-col bg-coral border border-b-6">
+            <header>
+                <div class="bg-mahogany px-4 pt-2">
+                    <hr class="border-0 border-t border-coral">
+                </div>
+                <nav class="flex flex-row flex-wrap justify-between items-end text-coral bg-mahogany px-4 py-1 font-bold mb-8">
+                    <h2 class="text-3xl pr-8 font-archivo"><a href="/" title="Home" class="hover:text-grey">hstuklis<a/>.<a href="https://github.com/hstuklis" title="Show me the code" class="hover:text-grey">dev<a/></h2>
+                    <ul class="flex flex-row text-xl font-public-sans">
+                        <li class="mr-2 hover:text-grey"><a href="/about" title="About me">About</a></li>
+                        <li class="mr-2">\\\</li>
+                        <li><a class="hover:text-pink-500" href="/wedding" title="🌹My Wedding Website🌹">Wedding</a></li>
+                    </ul>
+                </nav>
+            <header/>
+            <main class="px-12">
+                <slot />
+            </main>
+                <div class="bg-mahogany px-4 pt-6 pb-2">
+                    <hr class="border-0 border-t border-coral">
+                <div/>
+        <div/>
+    <script>
+        const reveals = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry, i) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            },
+            { threshold: 0.08 }
+        );
+        reveals.forEach(el => observer.observe(el));
+    </script>
     </body>
-    <style>
-        h1 {
-            font-size: 2rem;
-        }
-    </style>
 </html>

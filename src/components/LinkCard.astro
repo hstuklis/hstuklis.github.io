@@ -1,0 +1,39 @@
+---
+import type { LinkSection } from '../data/links';
+
+interface Props {
+  section: LinkSection;
+}
+const { section } = Astro.props;
+---
+
+<div class={`
+    ${section.color || 'bg-peach'} 
+    border border-b-4 border-coffee 
+    p-6 
+    break-inside-avoid
+    mb-6
+`}>
+  <h3 class="text-xl font-bold font-archivo mb-4 border-b border-coffee pb-2">
+    {section.title}
+  </h3>
+  <ul class="space-y-3">
+    {section.items.map((item) => (
+      <li class="w-fit">
+        <a
+          href={item.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="group flex items-center gap-1"
+        >
+          <img
+            src={`https://www.google.com/s2/favicons?domain=${new URL(item.url).hostname}&sz=32`}
+            alt=""
+            class="w-4 h-4 border border-coffee bg-coffee"
+          />
+          <span class="group-hover:underline group-hover:decoration-coffee group-hover:decoration-wavy">{item.label}</span>
+        </a>
+      </li>
+    ))}
+  </ul>
+</div>
