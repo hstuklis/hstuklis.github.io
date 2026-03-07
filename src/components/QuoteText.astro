@@ -12,6 +12,9 @@ import { quotes } from '../data/quotes';
 
 <style>
     #quote-container {
+        opacity: 0;
+    }
+    #quote-container.animate {
         animation: quoteIn 1s ease-out forwards;
     }
     @keyframes quoteIn {
@@ -28,6 +31,8 @@ import { quotes } from '../data/quotes';
 
 <script define:vars={{ quotes }}>
     const quote = quotes[Math.floor(Math.random() * quotes.length)];
+    const container = document.getElementById('quote-container');
     document.getElementById('quote-text').textContent = quote.text;
     document.getElementById('quote-reference').textContent = quote.reference;
+    container.classList.add('animate');
 </script>

@@ -2,6 +2,14 @@
 import '../styles/global.css'
 import RepeatedTextBG from "../components/RepeatedTextBG.tsx"
 import Config from '~/config'
+import archivoBlackUrl from '@fontsource/archivo-black/files/archivo-black-latin-400-normal.woff2?url'
+import publicSans400Url from '@fontsource/public-sans/files/public-sans-latin-400-normal.woff2?url'
+import publicSans400ItalicUrl from '@fontsource/public-sans/files/public-sans-latin-400-italic.woff2?url'
+import publicSans600Url from '@fontsource/public-sans/files/public-sans-latin-600-normal.woff2?url'
+import ibmPlexMono400Url from '@fontsource/ibm-plex-mono/files/ibm-plex-mono-latin-400-normal.woff2?url'
+import ibmPlexMono400ItalicUrl from '@fontsource/ibm-plex-mono/files/ibm-plex-mono-latin-400-italic.woff2?url'
+import ibmPlexMono600Url from '@fontsource/ibm-plex-mono/files/ibm-plex-mono-latin-600-normal.woff2?url'
+import pacificoUrl from '@fontsource/pacifico/files/pacifico-latin-400-normal.woff2?url'
 interface Props {
     title?: string
     description?: string
@@ -29,11 +37,12 @@ const pageKeywords = [
 ---
 
 <!doctype html>
-<html lang="en" class="relative">
+<html lang="en" translate="no" class="relative">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="generator" content={Astro.generator} />
+        <meta name="google" content="notranslate" />
         <meta name="title" content={pageTitle} />
         <meta name="description" content={pageDescription} />
         <meta name="author" content={pageAuthor} />
@@ -49,13 +58,21 @@ const pageKeywords = [
         <meta name="keywords" content={pageKeywords} />
         <link rel="canonical" href={pageUrl} />
         <link rel="sitemap" href="/sitemap-index.xml" />
-<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link
             rel="alternate"
             type="application/rss+xml"
             title={Config.title}
             href={new URL('rss.xml', Astro.site)}
         />
+        <link rel="preload" as="font" type="font/woff2" href={archivoBlackUrl} crossorigin />
+        <link rel="preload" as="font" type="font/woff2" href={publicSans400Url} crossorigin />
+        <link rel="preload" as="font" type="font/woff2" href={publicSans400ItalicUrl} crossorigin />
+        <link rel="preload" as="font" type="font/woff2" href={publicSans600Url} crossorigin />
+        <link rel="preload" as="font" type="font/woff2" href={ibmPlexMono400Url} crossorigin />
+        <link rel="preload" as="font" type="font/woff2" href={ibmPlexMono400ItalicUrl} crossorigin />
+        <link rel="preload" as="font" type="font/woff2" href={ibmPlexMono600Url} crossorigin />
+        <link rel="preload" as="font" type="font/woff2" href={pacificoUrl} crossorigin />
         <title>{pageTitle}</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.css">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
@@ -68,21 +85,21 @@ const pageKeywords = [
                     <hr class="border-0 border-t border-coral">
                 </div>
                 <nav class="flex flex-row flex-wrap justify-between items-end text-coral bg-mahogany px-4 py-1 font-bold mb-8">
-                    <h2 class="text-3xl pr-8 font-archivo"><a href="/" title="Home" class="hover:text-grey">hstuklis<a/>.<a href="https://github.com/hstuklis" title="Show me the code" class="hover:text-grey">dev<a/></h2>
+                    <h2 class="text-3xl pr-8 font-archivo"><a href="/" title="Home" class="hover:text-grey">hstuklis</a>.<a href="https://github.com/hstuklis" title="Show me the code" class="hover:text-grey">dev</a></h2>
                     <ul class="flex flex-row text-xl font-public-sans">
                         <li class="mr-2 hover:text-grey"><a href="/about" title="About me">About</a></li>
                         <li class="mr-2">\\\</li>
                         <li><a class="hover:text-pink-500" href="/wedding" title="🌹My Wedding Website🌹">Wedding</a></li>
                     </ul>
                 </nav>
-            <header/>
+            </header>
             <main class="px-12">
                 <slot />
             </main>
-                <div class="bg-mahogany px-4 pt-6 pb-2">
-                    <hr class="border-0 border-t border-coral">
-                <div/>
-        <div/>
+            <div class="bg-mahogany px-4 pt-6 pb-2">
+                <hr class="border-0 border-t border-coral">
+            </div>
+        </div>
     <script>
         const reveals = document.querySelectorAll('.reveal');
         const observer = new IntersectionObserver(

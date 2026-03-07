@@ -3,13 +3,14 @@ interface Props {
   icon: string;
   label: string;
   isEmoji?: boolean;
+  compact?: boolean;
 }
-const { icon, label, isEmoji = false } = Astro.props;
+const { icon, label, isEmoji = false, compact = false } = Astro.props;
 ---
-<div class="flex flex-col items-center justify-center gap-2 px-5 py-4 border border-peach/15 hover:border-coral/60 hover:bg-coral/10 transition-all group cursor-default">
+<div class={`flex flex-col items-center justify-center border border-peach/15 hover:border-coral/60 hover:bg-coral/10 transition-all group cursor-default ${compact ? 'gap-1.5 px-3 py-2.5' : 'gap-2 px-5 py-4'}`}>
   {isEmoji
-    ? <span class="text-4xl leading-none group-hover:scale-110 transition-transform inline-block" aria-label={label}>{icon}</span>
-    : <i class={`${icon} text-4xl text-coral group-hover:text-peach group-hover:scale-110 transition-all inline-block`}></i>
+    ? <span class={`leading-none group-hover:scale-110 transition-transform inline-block ${compact ? 'text-2xl' : 'text-4xl'}`} aria-label={label}>{icon}</span>
+    : <i class={`${icon} text-coral group-hover:text-peach group-hover:scale-110 transition-all inline-block ${compact ? 'text-2xl' : 'text-4xl'}`}></i>
   }
-  <span class="font-ibm text-[11px] text-peach/50 tracking-wide group-hover:text-peach/80 transition-colors">{label}</span>
+  <span class="font-ibm text-[10px] text-peach/50 tracking-wide group-hover:text-peach/80 transition-colors">{label}</span>
 </div>

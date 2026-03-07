@@ -78,7 +78,7 @@ export default function RepeatedTextBG({
                     {text + '\u00A0'}
                 </div>
             )}
-            <div className={classes}>{generateLines()}</div>
+            <div className={classes} aria-hidden="true" translate="no">{generateLines()}</div>
             {children && <div className="relative z-10">{children}</div>}
         </div>
     )

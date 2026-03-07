@@ -13,36 +13,21 @@ const stats = [
   { value: "Homelab", label: "Also runs at 3am" },
 ];
 
-const techGroups = [
-  {
-    label: "Languages",
-    icons: [
-      { icon: "devicon-python-plain",  label: "Python" },
-      { icon: "devicon-java-plain",    label: "Java" },
-      { icon: "devicon-go-plain",      label: "Go" },
-      { icon: "devicon-c-plain",       label: "C" },
-    ],
-  },
-  {
-    label: "Data Stack",
-    icons: [
-      { icon: "devicon-apachekafka-plain",  label: "Kafka" },
-      { icon: "🐿️",                        label: "Flink",    isEmoji: true },
-      { icon: "devicon-redis-plain",        label: "Redis" },
-      { icon: "devicon-postgresql-plain",   label: "Postgres" },
-      { icon: "devicon-neo4j-plain",        label: "Neo4j" },
-    ],
-  },
-  {
-    label: "Infra & Tools",
-    icons: [
-      { icon: "devicon-docker-plain",            label: "Docker" },
-      { icon: "devicon-kubernetes-plain",        label: "K8s" },
-      { icon: "devicon-amazonwebservices-plain", label: "S3" },
-      { icon: "devicon-linux-plain",             label: "Linux" },
-      { icon: "devicon-git-plain",               label: "GitOps" },
-    ],
-  },
+const techIcons = [
+  { icon: "devicon-python-plain",            label: "Python" },
+  { icon: "devicon-java-plain",              label: "Java" },
+  { icon: "devicon-go-plain",                label: "Go" },
+  { icon: "devicon-c-plain",                 label: "C" },
+  { icon: "devicon-apachekafka-plain",       label: "Kafka" },
+  { icon: "🐿️",                             label: "Flink",  isEmoji: true },
+  { icon: "devicon-redis-plain",             label: "Redis" },
+  { icon: "devicon-postgresql-plain",        label: "Postgres" },
+  { icon: "devicon-neo4j-plain",             label: "Neo4j" },
+  { icon: "devicon-docker-plain",            label: "Docker" },
+  { icon: "devicon-kubernetes-plain",        label: "K8s" },
+  { icon: "devicon-amazonwebservices-plain", label: "S3" },
+  { icon: "devicon-linux-plain",             label: "Linux" },
+  { icon: "devicon-git-plain",               label: "GitOps" },
 ];
 
 const expertise = [
@@ -102,36 +87,15 @@ const expertise = [
 					<RepeatedTextBG text="もしもし" repeats={20} lines={120} classes="whitespace-nowrap select-none opacity-50 text-coffee text-sm tracking-tighter pointer-events-none">
 					</RepeatedTextBG>
 				</div>
-				<img src="/headshot.png" alt="Henry Stuklis" class="absolute inset-0 w-full h-full object-cover object-top z-10">
+				<img src="/headshot.png" alt="Henry Stuklis" class="absolute inset-0 w-full h-full object-cover object-top z-10" style="filter: sepia(0.25) contrast(1.08) saturate(0.9);">
 			</div>
 		</div>
 	</section>
 
 	<!-- STATS STRIP -->
 	<section class="border border-b-4 border-coffee bg-mahogany text-peach mb-8 reveal">
-		<div class="grid grid-cols-2 lg:grid-cols-4 divide-x divide-y lg:divide-y-0 divide-peach/10">
+		<div class="grid grid-cols-2 lg:grid-cols-4 gap-px bg-peach/10">
 			{stats.map(s => <StatItem value={s.value} label={s.label} />)}
-		</div>
-	</section>
-
-	<!-- TECH STACK -->
-	<section class="border border-b-4 border-coffee bg-coffee mb-8 reveal">
-		<div class="px-8 py-10">
-			<p class="font-ibm text-xs tracking-widest uppercase text-coral/40 mb-1">技術 - Tech</p>
-			<h2 class="font-archivo text-4xl lg:text-5xl tracking-tighter mb-10 text-coral">Tools of Trade</h2>
-			<div class="flex flex-col gap-8">
-				{techGroups.map(group => (
-					<div>
-						<div class="flex items-center gap-4 mb-4">
-							<span class="font-ibm text-[10px] text-peach/30 tracking-widest uppercase shrink-0">{group.label}</span>
-							<div class="flex-1 h-px bg-peach/10"></div>
-						</div>
-						<div class="grid gap-2" style={`grid-template-columns: repeat(${group.icons.length}, 1fr)`}>
-							{group.icons.map(t => <TechIcon icon={t.icon} label={t.label} isEmoji={t.isEmoji} />)}
-						</div>
-					</div>
-				))}
-			</div>
 		</div>
 	</section>
 
@@ -142,6 +106,17 @@ const expertise = [
 			<h2 class="font-archivo text-4xl lg:text-5xl tracking-tighter mb-8">What I Do</h2>
 			<div class="grid grid-cols-1 md:grid-cols-3 border border-coffee/20 divide-y md:divide-y-0 md:divide-x divide-coffee/20">
 				{expertise.map(e => <ExpertiseCard num={e.num} title={e.title} body={e.body} />)}
+			</div>
+		</div>
+	</section>
+
+	<!-- TECH STACK -->
+	<section class="border border-b-4 border-coffee bg-coffee mb-8 reveal">
+		<div class="px-6 py-6">
+			<p class="font-ibm text-xs tracking-widest uppercase text-coral/40 mb-1">技術 - Tech</p>
+			<h2 class="font-archivo text-2xl lg:text-3xl tracking-tighter mb-4 text-coral">Tools of Trade</h2>
+			<div class="grid grid-cols-5 lg:grid-cols-7 gap-2">
+				{techIcons.map(t => <TechIcon icon={t.icon} label={t.label} isEmoji={t.isEmoji} compact={true} />)}
 			</div>
 		</div>
 	</section>

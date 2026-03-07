@@ -59,10 +59,9 @@ export const linkSections: LinkSection[] = [
       { label: "awesome-cli-apps", url: "https://github.com/agarrharr/awesome-cli-apps"},
     ],
   },
-
   {
     title: "Games",
-    items : [
+    items: [
       { label: "Pokémon Showdown", url: "https://play.pokemonshowdown.com/"},
       { label: "Pokémon Auto Chess", url: "https://pokemon-auto-chess.com/"},
       { label: "Pokérogue", url: "https://pokerogue.net/"},
@@ -73,7 +72,7 @@ export const linkSections: LinkSection[] = [
   },
   {
     title: "Cool",
-    items : [
+    items: [
       { label: "Speedruns", url: "https://speedrun.com/"},
       { label: "Romhacking.net", url: "https://www.romhacking.net/"},
     ],
