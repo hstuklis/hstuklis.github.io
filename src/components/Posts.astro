@@ -1,0 +1,39 @@
+---
+import { Image } from "astro:assets"
+import { getPostSections } from "../lib/posts"
+
+const postSections = await getPostSections()
+
+const thumb = "size-[2.5em] shrink-0 border border-ovenglow"
+---
+<div class="flex grow flex-col bg-butterstick bg-lines-radial-bl font-corm text-sm">
+  {postSections.map((section) => (
+    <nav class="mb-4" aria-label={section.title}>
+      <h2 class="px-2 py-1 text-4xl font-archivo tracking-tighter text-ovenglow">{section.title}</h2>
+      <ul class="px-2 py-2">
+        {section.items.map((post) => (
+          <li>
+            <a
+              class="flex items-center gap-1.5 px-1 py-0.5 text-ovenglow hover:text-sardinetin hover:underline hover:decoration-wavy focus-visible:bg-ovenglow focus-visible:text-butterstick focus-visible:outline-none"
+              href={post.url}
+              title={post.description}
+            >
+              {post.image ? (
+                <Image
+                  class:list={[thumb, "object-cover"]}
+                  src={post.image}
+                  alt=""
+                  width={128}
+                  height={128}
+                  loading="lazy"
+                />
+              ) : (
+                <span class:list={[thumb, "bg-lines-diagonal"]} aria-hidden="true"></span>
+              )}<span class="wrap-break-word">{post.label}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  ))}
+</div>

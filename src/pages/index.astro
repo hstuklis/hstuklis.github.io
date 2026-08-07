@@ -1,0 +1,15 @@
+---
+import Layout from "../layouts/layout.astro"
+import Intro from "../components/Intro.astro"
+import Posts from "../components/Posts.astro"
+import Links from "../components/Links.astro"
+---
+<Layout title="Home" bgtext="家">
+  <div class="grid grid-cols-1 sm:grid-cols-2 text-ovenglow gap-4">
+    <Intro/>
+    <Posts/>
+    <div class="sm:col-span-2">
+      <Links/>
+    </div>
+  </div>
+</Layout>

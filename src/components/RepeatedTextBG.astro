@@ -1,0 +1,77 @@
+---
+interface Props {
+  text?: string
+  size?: number
+  fixed?: boolean
+  classes?: string
+  gap?: number
+}
+
+const {
+  text = "",
+  size = 16,
+  fixed = false,
+  classes = "",
+  gap = size / 3,
+} = Astro.props
+
+const id =
+  "rt-" +
+  [...`${text}|${size}|${gap}`]
+    .reduce((h, c) => (Math.imul(h, 31) + c.charCodeAt(0)) | 0, 0)
+    .toString(36)
+    .replace("-", "z")
+
+const cellH = size * 1.5
+
+const fullWidth = /^[　-〿぀-ヿ㐀-䶿一-鿿]+$/.test(text)
+const tileW = size * text.length + gap
+
+const repeats = Math.ceil(16000 / (size * 0.3 * text.length + gap))
+const rows = Math.ceil(9000 / cellH)
+
+const textProps = {
+  x: 0,
+  y: cellH / 2,
+  "font-size": size,
+  "dominant-baseline": "central",
+  fill: "currentColor",
+  "xml:space": "preserve",
+}
+---
+
+{text && (
+  <svg
+    aria-hidden="true"
+    class:list={[
+      "notranslate",
+      fixed ? "fixed" : "absolute",
+      "inset-0 h-full w-full select-none pointer-events-none",
+      classes,
+    ]}
+  >
+    {fullWidth ? (
+      <>
+        <defs>
+          <pattern id={id} patternUnits="userSpaceOnUse" width={tileW} height={cellH}>
+            <text {...textProps}>{text}</text>
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill={`url(#${id})`} />
+      </>
+    ) : (
+      <>
+        <defs>
+          <text id={id} {...textProps}>
+            {Array.from({ length: repeats }, (_, i) => (
+              <tspan dx={i === 0 ? 0 : gap}>{text}</tspan>
+            ))}
+          </text>
+        </defs>
+        {Array.from({ length: rows }, (_, row) => (
+          <use href={`#${id}`} y={row * cellH} />
+        ))}
+      </>
+    )}
+  </svg>
+)}

@@ -1,0 +1,67 @@
+---
+import '../styles/global.css'
+import { Font } from 'astro:assets'
+import RepeatedTextBG from "../components/RepeatedTextBG.astro"
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+import Config from '~/config'
+interface Props {
+  title?: string
+  description?: string
+  tags?: string[]
+  author?: string
+  bgtext?: string
+}
+
+const { title, description, tags, author, bgtext } = Astro.props
+const pageUrl = new URL(Astro.url.pathname, Astro.site).href.replace(/\/$/, '') 
+const pageType = Astro.url.pathname.startsWith('/posts') ? 'post' : 'website'
+const pageTitle = title ? `${title} | ${Config.title}` : Config.title
+const pageDescription = description || Config.description
+const pageAuthor = author || Config.author
+const pageBackgroundText = bgtext || ""
+const pageKeywords = [
+  ...new Set(Config.tags.concat(tags || []).map((word) => word.toLowerCase())),
+].join(', ')
+---
+
+<!doctype html>
+<html lang="en" class="relative">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="title" content={pageTitle} />
+    <meta name="description" content={pageDescription} />
+    <meta name="author" content={pageAuthor} />
+    <meta property="og:site_name" content={Config.title} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={pageDescription} />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:type" content={pageType} />
+    <!-- TODO: og:image / twitter:image once social cards exist. A card that
+       404s previews worse than none at all, so summary over summary_large_image. -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={pageDescription} />
+    <meta name="keywords" content={pageKeywords} />
+    <link rel="canonical" href={pageUrl} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <Font cssVariable="--ff-archivo" preload />
+    <Font cssVariable="--ff-public-sans" preload />
+    <Font cssVariable="--ff-ibm" />
+    <title>{pageTitle}</title>
+  </head>
+  <body class="bg-ovenglow text-butterstick">
+    <RepeatedTextBG text={pageBackgroundText} size={99} classes="text-tomatosoup/20" fixed/>
+    <Header/> 
+    <main class="fixed inset-0 mx-auto max-w-7xl px-4 pt-20 sm:pt-14 pb-22 sm:pb-15 z-10">
+      <div class="h-full overflow-auto scrollbar-gutter:stable">
+        <slot />
+      </div>
+    </main>
+    <Footer/>
+  </body>
+</html>

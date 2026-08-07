@@ -1,0 +1,32 @@
+---
+import { quotes } from "../data/quotes"
+
+const quote = quotes[Math.floor(Math.random() * quotes.length)]!
+---
+<div class="flex grow flex-col bg-butterstick">
+  <div class="relative flex items-center justify-center overflow-hidden bg-introbg">
+    <img src="/intro.gif" alt="" width="449" height="144" class="absolute inset-x-0 bottom-0 z-10 mx-auto w-full">
+    <div class="pointer-events-none absolute inset-0 z-10 bg-sardinetin mix-blend-color-dodge"></div>
+    <img src="/headshot.png" alt="Henry Stuklis" width="500" height="500" class="zoom-40 relative z-10">
+  </div>
+  <div class="bg-lines-radial-br flex grow flex-col">
+    <div class="relative text-ovenglow p-4 overflow-hidden">
+      <figure class="relative z-10 flex flex-col gap-2">
+        <blockquote id="quote-text"
+          class="text-xl lg:text-2xl font-archivo tracking-tighter text-pretty hyphens-auto">
+          {quote.text}
+        </blockquote>
+        <div class="bg-rainbow h-1.5" aria-hidden="true"></div>
+        <figcaption class="w-fit border-t border-ovenglow pt-2 text-xs lg:text-sm font-corm">
+          <cite id="quote-reference">{quote.reference}</cite>
+        </figcaption>
+      </figure>
+    </div>
+    <img src="/coffee.gif" alt="Angry Coffee Cup Gif" width="171" height="130" class="z-10 mt-auto zoom-80">
+  </div>
+</div>
+<script is:inline define:vars={{ quotes }}>
+  const quote = quotes[Math.floor(Math.random() * quotes.length)]
+  document.getElementById("quote-text").textContent = quote.text
+  document.getElementById("quote-reference").textContent = quote.reference
+</script>

@@ -1,0 +1,46 @@
+---
+import { linkSections } from "../data/links"
+
+const accents = [
+  "border-ovenglow bg-ovenglow text-butterstick",
+  "border-tomatosoup bg-tomatosoup text-introbg",
+  "border-sardinetin bg-sardinetin text-introbg",
+  "border-introbg bg-introbg text-butterstick",
+]
+
+const sectionRows = linkSections.map((section) => section.items.length + 1)
+const totalRows = sectionRows.reduce((sum, rows) => sum + rows, 0)
+const columnCount = Math.max(1, Math.ceil(totalRows / Math.max(...sectionRows)))
+---
+<div class="gap-x-3 font-corm text-sm" style={`columns: 12em ${columnCount}`}>
+  {linkSections.map((section, i) => (
+    <nav
+      class="mb-4 break-inside-avoid border-2 border-butterstick bg-butterstick bg-lines-diagonal"
+      aria-label={section.title}
+    >
+      <h2 class:list={["flex items-center justify-between gap-2 border-b-2 px-2 py-1 font-archivo font-black tracking-tighter", accents[i % accents.length]]}>
+        {section.title}{section.glyph && <span aria-hidden="true" class="leading-none">{section.glyph}</span>}
+      </h2>
+      <ul class="px-2 py-2">
+        {section.items.map((item) => (
+          <li>
+            <a
+              class="flex items-center gap-1.5 px-1 py-0.5 text-ovenglow hover:text-sardinetin hover:underline hover:decoration-wavy focus-visible:bg-ovenglow focus-visible:text-butterstick focus-visible:outline-none"
+              href={item.url}
+            >
+              <img
+                class="size-[1.33em] shrink-0 border border-ovenglow bg-black"
+                src={`https://www.google.com/s2/favicons?domain=${new URL(item.url, Astro.site).hostname}&sz=32`}
+                alt=""
+                loading="lazy"
+                width="16"
+                height="16"
+                onerror="this.style.display='none'"
+              /><span class="wrap-break-word">{item.label}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  ))}
+</div>

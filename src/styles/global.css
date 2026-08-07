@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-ibm: var(--ff-ibm);
+  --font-archivo: var(--ff-archivo);
+  --font-public-sans: var(--ff-public-sans);
+  --font-corm: var(--ff-corm);
+}
+
+@theme {
+  --color-sardinetin: #7ca2e0;
+  --color-ovenglow: #6c2c25;
+  --color-butterstick: #f2edbd;
+  --color-tomatosoup: #eb5e3a;
+  --color-introbg: #0e285e;
+  --color-linework: #e5e0b2;
+}
+
+@utility bg-lines-radial-br {
+  background-image: repeating-radial-gradient(
+    circle at 100% 100%,
+    transparent 0 20px,
+    var(--color-linework) 20px 21px
+  );
+}
+
+@utility bg-lines-radial-bl {
+  background-image: repeating-radial-gradient(
+    circle at 0% 100%,
+    transparent 0 20px,
+    var(--color-linework) 20px 21px
+  );
+}
+
+@utility bg-lines-diagonal {
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent 0 20.2132px,
+    var(--color-linework) 20.2132px 21.2132px
+  );
+}
+
+@utility bg-rainbow {
+  background-image: linear-gradient(
+    90deg,
+    var(--color-tomatosoup) 0 25%,
+    var(--color-ovenglow) 0 50%,
+    var(--color-sardinetin) 0 75%,
+    var(--color-introbg) 0
+  );
+}
+
+@utility bg-rainbow-chrome {
+  background-image: linear-gradient(
+    90deg,
+    var(--color-introbg) 0 25%,
+    var(--color-sardinetin) 0 50%,
+    var(--color-butterstick) 0 75%,
+    var(--color-tomatosoup) 0
+  );
+}
