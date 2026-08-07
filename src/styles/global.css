@@ -12,7 +12,7 @@
   --color-ovenglow: #6c2c25;
   --color-butterstick: #f2edbd;
   --color-tomatosoup: #eb5e3a;
-  --color-introbg: #0e285e;
+  --color-midnight: #0e285e;
   --color-linework: #e5e0b2;
 }
 
@@ -46,14 +46,14 @@
     var(--color-tomatosoup) 0 25%,
     var(--color-ovenglow) 0 50%,
     var(--color-sardinetin) 0 75%,
-    var(--color-introbg) 0
+    var(--color-midnight) 0
   );
 }
 
 @utility bg-rainbow-chrome {
   background-image: linear-gradient(
     90deg,
-    var(--color-introbg) 0 25%,
+    var(--color-midnight) 0 25%,
     var(--color-sardinetin) 0 50%,
     var(--color-butterstick) 0 75%,
     var(--color-tomatosoup) 0
